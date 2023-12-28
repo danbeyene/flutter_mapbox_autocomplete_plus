@@ -97,6 +97,30 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+          toolbarHeight: 56.v,
+          leadingWidth: 70.h,
+          leading: widget.isDarkMode
+              ? InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: Colors.white,
+                  ),
+                )
+              : InkWell(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: Colors.black,
+                  ),
+                )),
       body: Container(
         width: mediaQueryData.size.width,
         height: mediaQueryData.size.height,
@@ -156,7 +180,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                 ],
               ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 60.v),
+              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 90.v),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
