@@ -62,7 +62,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
 
   Predections? _placePredictions = Predections.empty();
 
-  Future<void> _getPlaces(String input) async {
+  Future<void> _getPlaces(BuildContext context, String input) async {
     if (input.length > 0) {
       String url =
           "https://api.mapbox.com/geocoding/v5/mapbox.places/$input.json?access_token=${widget.apiKey}&cachebuster=1566806258853&autocomplete=true&language=${widget.language}&limit=${widget.limit}";
@@ -79,11 +79,15 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
 
       _placePredictions = null;
 
-      setState(() {
-        _placePredictions = predictions;
-      });
+      if (context.mounted) {
+        setState(() {
+          _placePredictions = predictions;
+        });
+      }
     } else {
-      setState(() => _placePredictions = Predections.empty());
+      if (context.mounted) {
+        setState(() => _placePredictions = Predections.empty());
+      }
     }
   }
 
@@ -242,7 +246,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                         textInputType: TextInputType.text,
                         autofocus: true,
                         focusNode: _searchFieldTextFocus,
-                        onChanged: (input) => _getPlaces(input),
+                        onChanged: (input) => _getPlaces(context,input),
                         onFieldSubmitted: (value) =>
                             _searchFieldTextFocus.unfocus(),
                         suffix: Container(
