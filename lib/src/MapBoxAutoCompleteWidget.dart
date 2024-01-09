@@ -100,6 +100,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
       extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+          backgroundColor: Colors.transparent,
           toolbarHeight: 56.v,
           leadingWidth: 70.h,
           leading: widget.isDarkMode
