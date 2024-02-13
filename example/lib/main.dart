@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
               context,
               MaterialPageRoute(
                 builder: (context) => MapBoxAutoCompleteWidget(
-                  apiKey: Tokens.MAPBOX_ACCESS_TOKEN,
+                  apiKey: TOKEN,
                   hint: "Select starting point",
                   onSelect: (place) {
                     _startPointController.text = place.placeName ?? "not found";
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                   limit: 10,
                   language: 'en',
                   context: context,
-                  isDarkMode: true,
+                  loadingColor: Colors.black, backgroundColor: Colors.white70, textColor: Colors.blueAccent, iconColor: Colors.deepPurple,
                 ),
               ),
             );
