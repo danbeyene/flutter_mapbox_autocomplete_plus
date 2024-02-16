@@ -1,6 +1,6 @@
 name: flutter_mapbox_autocomplete_plus
 description: A Flutter Package for MapBox Places autocomplete which allows you use the MapBox API's to get autocomplete text of places
-version: 2.3.2
+version: 2.3.0
 publish_to: none
 homepage: https://github.com/danbeyene/flutter_mapbox_autocomplete_plus
 
@@ -10,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # http: ^1.1.0
-  http: ^1.2.0
+  http: ^1.1.0
   outline_gradient_button: ^2.0.1+1
 
 dev_dependencies:
