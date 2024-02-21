@@ -101,10 +101,19 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
     return Scaffold(
-      extendBody: true,
-      extendBodyBehindAppBar: true,
+      // extendBody: true,
+      // extendBodyBehindAppBar: true,
       appBar: AppBar(
           backgroundColor: Colors.transparent,
+          flexibleSpace: Container(decoration: BoxDecoration(
+              gradient: RadialGradient(
+                  radius: 15,
+                  center: const Alignment(-4, -5),
+                  colors: [
+                    const Color(0xff97ECFF),
+                    const Color(0xffFFFFFF).withOpacity(0.4),
+                  ])
+          )),
           toolbarHeight: 56.v,
           leadingWidth: 70.h,
           leading: widget.isDarkMode
@@ -185,7 +194,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                 ],
               ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 110.v),
+              padding: EdgeInsets.only(left: 15.h, right: 15.h,top:20.v),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
