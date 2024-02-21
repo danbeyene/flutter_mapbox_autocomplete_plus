@@ -185,7 +185,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                 ],
               ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 90.v),
+              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 110.v),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
