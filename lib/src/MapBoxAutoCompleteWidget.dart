@@ -106,12 +106,12 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           flexibleSpace: Container(decoration: BoxDecoration(
-              gradient: RadialGradient(
-                  radius: 15,
-                  center: const Alignment(-4, -5),
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end:  Alignment.bottomCenter,
                   colors: [
-                    const Color(0xff97ECFF),
-                    const Color(0xffFFFFFF).withOpacity(0.4),
+                    const Color(0xff97ECFF).withOpacity(0.6),
+                    const Color(0xff97ECFF).withOpacity(0.3),
                   ])
           )),
           toolbarHeight: 56.v,
@@ -159,7 +159,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                       child: Opacity(
                         opacity: 0.3,
                         child: Container(
-                            height: 591,
+                            height: 591.v,
                             decoration: BoxDecoration(
                                 gradient: RadialGradient(
                                     radius: 1,
@@ -177,7 +177,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                       child: Opacity(
                         opacity: 0.3,
                         child: Container(
-                            height: 591,
+                            height: 591.v,
                             decoration: BoxDecoration(
                                 gradient: RadialGradient(
                                     radius: 1,
