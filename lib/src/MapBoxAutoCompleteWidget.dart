@@ -159,7 +159,6 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                       child: Opacity(
                         opacity: 0.3,
                         child: Container(
-                            width: 591,
                             height: 591,
                             decoration: BoxDecoration(
                                 gradient: RadialGradient(
@@ -178,7 +177,6 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                       child: Opacity(
                         opacity: 0.3,
                         child: Container(
-                            width: 591,
                             height: 591,
                             decoration: BoxDecoration(
                                 gradient: RadialGradient(
