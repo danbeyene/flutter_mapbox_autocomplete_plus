@@ -103,6 +103,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
     return Scaffold(
       // extendBody: true,
       // extendBodyBehindAppBar: true,
+      backgroundColor: widget.isDarkMode?const Color(0XFF11002D):const Color(0xfffffdf3),
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           flexibleSpace: Container(
