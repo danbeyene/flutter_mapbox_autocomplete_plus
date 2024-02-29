@@ -105,15 +105,19 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
       // extendBodyBehindAppBar: true,
       appBar: AppBar(
           backgroundColor: Colors.transparent,
-          flexibleSpace: Container(decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end:  Alignment.bottomCenter,
-                  colors: [
-                    const Color(0xff97ECFF).withOpacity(0.6),
-                    const Color(0xff97ECFF).withOpacity(0.3),
-                  ])
-          )),
+          flexibleSpace: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                widget.isDarkMode
+                    ? const Color(0XFF11002D)
+                    : const Color(0xff97ECFF).withOpacity(0.6),
+                widget.isDarkMode
+                    ? const Color(0XFF11002D)
+                    : const Color(0xff97ECFF).withOpacity(0.3),
+              ]))),
           toolbarHeight: 56.v,
           leadingWidth: 70.h,
           leading: widget.isDarkMode
@@ -192,7 +196,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                 ],
               ),
             SingleChildScrollView(
-              padding: EdgeInsets.only(left: 15.h, right: 15.h,top:20.v),
+              padding: EdgeInsets.only(left: 15.h, right: 15.h, top: 20.v),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -253,7 +257,7 @@ class _MapBoxAutoCompleteWidgetState extends State<MapBoxAutoCompleteWidget> {
                         textInputType: TextInputType.text,
                         autofocus: true,
                         focusNode: _searchFieldTextFocus,
-                        onChanged: (input) => _getPlaces(context,input),
+                        onChanged: (input) => _getPlaces(context, input),
                         onFieldSubmitted: (value) =>
                             _searchFieldTextFocus.unfocus(),
                         suffix: Container(
